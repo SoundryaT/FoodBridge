@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   FiHeart, FiPackage, FiUsers, FiTruck,
-  FiCheckCircle, FiArrowRight, FiShield, FiZap,
+  FiCheckCircle, FiArrowRight, FiZap,
   FiStar, FiGlobe, FiAward
 } from 'react-icons/fi';
 
