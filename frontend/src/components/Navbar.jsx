@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
@@ -14,10 +14,10 @@ const Navbar = () => {
   };
 
   const roleColors = {
-    donor:     '#16a34a',
-    ngo:       '#2563eb',
+    donor: '#16a34a',
+    ngo: '#2563eb',
     volunteer: '#d97706',
-    admin:     '#dc2626'
+    admin: '#dc2626'
   };
 
   return (
@@ -34,11 +34,9 @@ const Navbar = () => {
       zIndex: 100,
       boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
     }}>
-
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={logo} alt="FoodBridge" style={{ height: '46px', objectFit: 'contain' }} />
       </div>
-
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <div style={{
           background: roleColors[user?.role] + '15',
