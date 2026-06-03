@@ -1,7 +1,8 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { FiLogOut, FiHeart } from 'react-icons/fi';
+import { FiLogOut } from 'react-icons/fi';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -13,10 +14,10 @@ const Navbar = () => {
   };
 
   const roleColors = {
-    donor: '#16a34a',
-    ngo: '#2563eb',
+    donor:     '#16a34a',
+    ngo:       '#2563eb',
     volunteer: '#d97706',
-    admin: '#dc2626'
+    admin:     '#dc2626'
   };
 
   return (
@@ -33,25 +34,17 @@ const Navbar = () => {
       zIndex: 100,
       boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <div style={{
-          background: 'linear-gradient(135deg, #16a34a, #15803d)',
-          borderRadius: '10px',
-          width: '36px',
-          height: '36px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <FiHeart color="white" size={18} />
-        </div>
-        <span style={{
-          fontWeight: '700',
-          fontSize: '1.1rem',
-          color: '#0f172a'
-        }}>FoodBridge</span>
+
+      {/* LOGO */}
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img
+          src={logo}
+          alt="FoodBridge"
+          style={{ height: '46px', objectFit: 'contain' }}
+        />
       </div>
 
+      {/* RIGHT SIDE */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <div style={{
           background: roleColors[user?.role] + '15',
@@ -64,9 +57,11 @@ const Navbar = () => {
         }}>
           {user?.role}
         </div>
+
         <span style={{ color: '#475569', fontSize: '0.9rem', fontWeight: '500' }}>
           {user?.name}
         </span>
+
         <button
           onClick={handleLogout}
           style={{
@@ -86,6 +81,7 @@ const Navbar = () => {
           Logout
         </button>
       </div>
+
     </nav>
   );
 };
